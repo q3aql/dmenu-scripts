@@ -42,6 +42,8 @@ dist: clean
 
 install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+	mkdir -p /usr/share/fonts/truetype/ubuntumono/
+	tar Jxvf fonts/ubuntumono-nerd-fonts.tar.xz -C /usr/share/fonts/truetype/ubuntumono/
 	mkdir -p /opt/dmenu-scripts/
 	cp -rf * /opt/dmenu-scripts/
 	chmod 755 -R /opt/dmenu-scripts/
