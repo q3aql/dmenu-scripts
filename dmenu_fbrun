@@ -8,9 +8,7 @@
 ######################################################################
 
 show_icon_tree() {
-  list_tree="${@}"
-  #current_path=$(pwd)
-  for current in ${list_tree} ; do
+  ls -1 | while read current ; do
     if [ -f "${current}" ] ; then
       echo "  ${current}"
     elif [ -d "${current}" ] ; then
@@ -46,8 +44,7 @@ remove_icon() {
 
 file=1
 while [ "${file}" ]; do
-  file_list=$(ls -1)
-  file_icon=$(show_icon_tree "${file_list}" | dmenu -p " filebrowser: $(basename $(pwd))")
+  file_icon=$(show_icon_tree | dmenu -p " filebrowser: $(basename $(pwd))")
   file=$(remove_icon "${file_icon}")
   echo "# ${file} #"
   if [ -e "${file}" ]; then
