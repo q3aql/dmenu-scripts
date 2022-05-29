@@ -48,8 +48,12 @@ function load_theme() {
   if [ -z "${file}" ] ; then
     echo "# Theme selector canceled"
   else
-    ${termrun} sudo ${main_folder}/scripts/build-theme.sh "${file}"
-    load_theme
+    if [ -f /usr/bin/sudo ] ; then
+      ${termrun} sudo ${main_folder}/scripts/build-theme.sh "${file}"
+      load_theme
+    else
+      ${termrun} su -c ${main_folder}/scripts/build-theme.sh "${file}"
+    fi
   fi
 }
 
