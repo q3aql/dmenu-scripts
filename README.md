@@ -4,10 +4,10 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions
 ### Dependencies:
   
   * **Arch Linux:**
-    * `$ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool xorg-xlsclients dex xterm` 
+    * `sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool xorg-xlsclients dex xterm` 
 
-  * **Debian/Uuntu:`**
-    * `$ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev libxinerama-dev xdotool x11-utils dex xterm` 
+  * **Debian/Ubuntu:`**
+    * `sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev libxinerama-dev xdotool x11-utils dex xterm` 
 
 ### Build and install:
 
