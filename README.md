@@ -46,6 +46,13 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions
   ```
 
 <img src="examples/dmenu_fbrun.png" /> 
+
+
+  ```shell
+  dmenu_themes
+  ```
+
+<img src="examples/dmenu_themes.png" /> 
  
 ### External links:
 
