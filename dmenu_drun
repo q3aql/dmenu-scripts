@@ -1,0 +1,54 @@
+#!/bin/bash
+
+##############################################################
+# dmenu_drun - dmenu script that simulates 'rofi -show drun' #
+#                                                            #
+# Author: q3aql <q3aql@duck.com>                             #
+# Last update: 29-05-2022                                    #
+##############################################################
+
+desktop_files="/usr/share/applications"
+desktop_files_home="${HOME}/.local/share/applications"
+
+list_desktop_files() {
+  if [ -d "${desktop_files}" ] ; then
+    ls -1 "${desktop_files}/" | grep ".desktop"
+  fi
+  if [ -d "${desktop_files_home}" ] ; then
+    ls -1 "${desktop_files_home}/" | grep ".desktop"
+  fi
+}
+
+list_desktop_icons() {
+  list_desktop_files | while read current_desktop ; do
+    echo "  ${current_desktop}"
+  done
+}
+
+rundesk () {
+  if [ -z ${1} ] ; then
+    echo "No file entry"
+  else
+    if [ -f "${1}" ] ; then
+      eval "$(awk -F= '$1=="Exec"{$1=""; print}' "$1")"
+    else
+      echo "File does not exist"
+    fi
+  fi
+}
+
+if [ -f /usr/bin/dex ] ; then
+  runDesktop="dex"
+else
+  runDesktop="rundesk"
+fi
+
+list_output=$(list_desktop_icons | dmenu "$@" -p " drun:")
+run_output=$(echo ${list_output} | cut -c 4-999)
+system_file=$(echo -n ${desktop_files}/ ; echo ${run_output})
+home_file=$(echo -n ${desktop_files_home}/ ; echo ${run_output})
+if [ -f "${system_file}" ] ; then
+  ${runDesktop} "${system_file}"
+elif [ -f "${home_file}" ] ; then
+  ${runDesktop} "${home_file}"
+fi
