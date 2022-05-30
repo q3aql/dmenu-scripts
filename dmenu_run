@@ -16,13 +16,15 @@ list_binaries() {
     if [ -z "${current_path}" ] ; then
       binaries=1
     else
-      # Extra code
-      if [ "${current_path}" == "/bin" ] ; then
-        count_path=$(expr ${count_path} + 1)
-      else
-        ls -1 ${current_path}/
-        count_path=$(expr ${count_path} + 1)
-      fi
+      # Extra code / When /bin is the same that /usr/bin/
+      #if [ "${current_path}" == "/bin" ] ; then
+      #  count_path=$(expr ${count_path} + 1)
+      #else
+      #  ls -1 ${current_path}/
+      #  count_path=$(expr ${count_path} + 1)
+      #fi
+      ls -1 ${current_path}/
+      count_path=$(expr ${count_path} + 1)
     fi
   done 
 }
