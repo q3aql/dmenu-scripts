@@ -17,6 +17,7 @@ _Note: Installation of `kitty` is opcional._
 
   ```shell
   $ git clone https://github.com/q3aql/dmenu-scripts
+  $ cd dmenu-scripts
   $ sudo make install clean
   ````
 
