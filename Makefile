@@ -44,12 +44,6 @@ install: all
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	mkdir -p /usr/share/fonts/truetype/ubuntumono/
 	tar Jxvf fonts/ubuntumono-nerd-fonts.tar.xz -C /usr/share/fonts/truetype/ubuntumono/
-	mkdir -p /opt/dmenu-scripts/
-	cp -rf * /opt/dmenu-scripts/
-	chmod 755 -R /opt/dmenu-scripts/
-	rm -rf /opt/dmenu-scripts/*.o
-	rm -rf /opt/dmenu-scripts/*.orig
-	cp -rf Makefile.themes /opt/dmenu-scripts/Makefile
 	cp -f dmenu dmenu_drun dmenu_run dmenu_wrun dmenu_fbrun dmenu_themes stest $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dmenu_drun
@@ -74,6 +68,5 @@ uninstall:
 		$(DESTDIR)$(PREFIX)/bin/stest\
 		$(DESTDIR)$(MANPREFIX)/man1/dmenu.1\
 		$(DESTDIR)$(MANPREFIX)/man1/stest.1
-	rm -rf /opt/dmenu-scripts/
 
 .PHONY: all options clean dist install uninstall
