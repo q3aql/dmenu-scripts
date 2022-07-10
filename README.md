@@ -4,12 +4,21 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions (run, drun
 ### Dependencies:
   
   * **Arch Linux:**
-    * `sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool xorg-xlsclients dex xterm brotli fontconfig libbsd libmd libpng libx11 libxau libxdmcp libxft libxrender xdg-utils` 
+    
+    ```shell
+    $ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool
+    $ sudo pacman -S xorg-xlsclients dex xterm brotli fontconfig libbsd libmd 
+    $ sudo pacman -S libpng libx11 libxau libxdmcp libxft libxrender xdg-utils
+    ````
 
   * **Debian/Ubuntu:**
-    * `sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev libxinerama-dev xdotool x11-utils dex xterm libxft-dev libfreetype6-dev libfontconfig1-dev libpng-dev libbrotli-dev libxrender-dev libmd-dev libxau-dev libbsd-dev libxdmcp-dev xdg-utils`
 
-_Note: Installation of `kitty` is opcional._ 
+    ```shell
+    $ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev xdg-utils
+    $ sudo apt install libxinerama-dev xdotool x11-utils dex xterm libxft-dev 
+    $ sudo apt install libfreetype6-dev libfontconfig1-dev libpng-dev libbrotli-dev 
+    $ sudo apt install libxrender-dev libmd-dev libxau-dev libbsd-dev libxdmcp-dev
+    ````
 
 ### Build and install:
 
@@ -61,6 +70,4 @@ _Note: Installation of `kitty` is opcional._
 
   * [dmenu homepage](https://tools.suckless.org/dmenu/)
   * [Rofi homepage](https://github.com/davatorium/rofi)
-
-
 
