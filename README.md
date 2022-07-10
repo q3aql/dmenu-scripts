@@ -6,18 +6,18 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions (run, drun
   * **Arch Linux:**
     
     ```shell
-    $ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool
-    $ sudo pacman -S xorg-xlsclients dex xterm brotli fontconfig libbsd libmd 
-    $ sudo pacman -S libpng libx11 libxau libxdmcp libxft libxrender xdg-utils
+    $ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool --noconfirm
+    $ sudo pacman -S xorg-xlsclients dex xterm brotli fontconfig libbsd libmd --noconfirm
+    $ sudo pacman -S libpng libx11 libxau libxdmcp libxft libxrender xdg-utils --noconfirm
     ````
 
   * **Debian/Ubuntu:**
 
     ```shell
-    $ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev xdg-utils
-    $ sudo apt install libxinerama-dev xdotool x11-utils dex xterm libxft-dev 
-    $ sudo apt install libfreetype6-dev libfontconfig1-dev libpng-dev libbrotli-dev 
-    $ sudo apt install libxrender-dev libmd-dev libxau-dev libbsd-dev libxdmcp-dev
+    $ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev xdg-utils -y
+    $ sudo apt install libxinerama-dev xdotool x11-utils dex xterm libxft-dev -y
+    $ sudo apt install libfreetype6-dev libfontconfig1-dev libpng-dev libbrotli-dev -y 
+    $ sudo apt install libxrender-dev libmd-dev libxau-dev libbsd-dev libxdmcp-dev -y
     ````
 
 ### Build and install:
@@ -65,6 +65,13 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions (run, drun
   ```
 
 <img src="examples/dmenu_themes.png" /> 
+
+
+  ```shell
+  dmenu_cmd
+  ```
+
+<img src="examples/dmenu_cmd.png" /> 
  
 ### External links:
 
