@@ -93,7 +93,7 @@ fi
 
 load_theme
 create_list_files
-list_output=$(list_desktop_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -p " drun:")
+list_output=$(list_desktop_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -l 18 -p " drun:")
 run_output=$(echo ${list_output} | cut -c 5-999)
 if [ "${run_output}" == "Scan New Desktop Files" ] ; then
   echo "0" > ${HOME}/.dmenu/read_list

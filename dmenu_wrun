@@ -42,7 +42,7 @@ function list_applications_icons() {
 }
 
 load_theme
-list_output=$(list_applications_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -p " window:")
+list_output=$(list_applications_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -l 18 -p " window:")
 run_output=$(echo ${list_output} | cut -c 4-999)
 if [ "${run_output}" == "gimp" ] ; then
   xdotool search --onlyvisible -classname "${run_output}" windowactivate &> /dev/null
