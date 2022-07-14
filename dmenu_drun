@@ -4,7 +4,7 @@
 # dmenu_drun - dmenu script that simulates 'rofi -show drun' #
 #                                                            #
 # Author: q3aql <q3aql@duck.com>                             #
-# Last update: 10-07-2022                                    #
+# Last update: 14-07-2022                                    #
 ##############################################################
 
 # Configuration variables
@@ -95,11 +95,13 @@ load_theme
 create_list_files
 list_output=$(list_desktop_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -l 18 -p " drun:")
 run_output=$(echo ${list_output} | cut -c 5-999)
-if [ "${run_output}" == "Scan New Desktop Files" ] ; then
-  echo "0" > ${HOME}/.dmenu/read_list
-  create_list_files
-  $0
-else
-  run_desktop_file=$(cat "${load_desktop_files}/${run_output}")
-  ${runDesktop} "${run_desktop_file}"
+if [ ! -z "${run_output}" ] ; then
+  if [ "${run_output}" == "Scan New Desktop Files" ] ; then
+    echo "0" > ${HOME}/.dmenu/read_list
+    create_list_files
+    $0
+  else
+    run_desktop_file=$(cat "${load_desktop_files}/${run_output}")
+    ${runDesktop} "${run_desktop_file}"
+  fi
 fi
