@@ -4,7 +4,7 @@
 # dmenu_wrun - dmenu script that simulates 'rofi -show window' #
 #                                                              #
 # Author: q3aql <q3aql@duck.com>                               #
-# Last update: 10-07-2022                                      #
+# Last update: 16-07-2022                                      #
 ################################################################
 
 # Configuration variables
@@ -43,14 +43,9 @@ function list_applications_icons() {
 
 load_theme
 list_output=$(list_applications_icons | dmenu -i -nb "${NBCOLOR}" -nf "${NFCOLOR}" -sb "${SBCOLOR}" -sf "${SFCOLOR}" -l 18 -p " window:")
-run_output=$(echo ${list_output} | cut -c 4-999)
-if [ "${run_output}" == "gimp" ] ; then
-  xdotool search --onlyvisible -classname "${run_output}" windowactivate &> /dev/null
-elif [ "${run_output}" == "gimp-2.10" ] ; then
-  xdotool search --onlyvisible -classname "${run_output}" windowactivate &> /dev/null
-elif [ "${run_output}" == "truecrypt" ] ; then
-  xdotool search --onlyvisible -classname "${run_output}" windowactivate &> /dev/null
+run_output=$(echo ${list_output} | cut -c 5-999)
+if [ -z "${run_output}" ] ; then
+  echo "# Selection window canceled"
 else
   xdotool search ".*${run_output}.*" windowactivate &> /dev/null
 fi
-
