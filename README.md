@@ -6,18 +6,18 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions (run, drun
   * **Arch Linux:**
     
     ```shell
-    $ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama xdotool --noconfirm
-    $ sudo pacman -S xorg-xlsclients dex xterm brotli fontconfig libbsd libmd --noconfirm
-    $ sudo pacman -S libpng libx11 libxau libxdmcp libxft libxrender xdg-utils --noconfirm
+    $ sudo pacman -S gcc make coreutils sed expat freetype2 libxinerama git wmctrl \
+      dex brotli fontconfig libbsd libmd libpng libx11 libxau libxdmcp libxft \
+      libxrender xdg-utils --noconfirm
     ````
 
   * **Debian/Ubuntu:**
 
     ```shell
-    $ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev xdg-utils -y
-    $ sudo apt install libxinerama-dev xdotool x11-utils dex xterm libxft-dev -y
-    $ sudo apt install libfreetype6-dev libfontconfig1-dev libpng-dev libbrotli-dev -y 
-    $ sudo apt install libxrender-dev libmd-dev libxau-dev libbsd-dev libxdmcp-dev -y
+    $ sudo apt install gcc make coreutils sed libexpat1-dev libfreetype-dev xdg-utils \
+      libxinerama-dev git wmctrl x11-utils dex libxft-dev libfreetype6-dev libpng-dev \
+      libfontconfig1-dev libbrotli-dev libxrender-dev libmd-dev libxau-dev libbsd-dev \
+      libxdmcp-dev -y
     ````
 
 ### Build and install:
