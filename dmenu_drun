@@ -4,7 +4,7 @@
 # dmenu_drun - dmenu script that simulates 'rofi -show drun' #
 #                                                            #
 # Author: q3aql <q3aql@duck.com>                             #
-# Last update: 16-07-2022                                    #
+# Last update: 20-07-2022                                    #
 ##############################################################
 
 # Configuration variables
@@ -13,6 +13,7 @@ load_themes="${load_theme_path}/themes"
 load_theme_file="${load_theme_path}/load_theme"
 load_desktop_files="${HOME}/.dmenu/desktop"
 desktop_files="/usr/share/applications"
+desktop_files_local="/usr/local/share/applications"
 desktop_files_home="${HOME}/.local/share/applications"
 desktop_files_flatpak="/var/lib/flatpak/exports/share/applications"
 
@@ -35,6 +36,9 @@ function load_theme() {
 function list_desktop_files() {
   if [ -d "${desktop_files}" ] ; then
     ls -1 "${desktop_files}/" | grep ".desktop"
+  fi
+  if [ -d "${desktop_files_local}" ] ; then
+    ls -1 "${desktop_files_local}/" | grep ".desktop"
   fi
   if [ -d "${desktop_files_home}" ] ; then
     ls -1 "${desktop_files_home}/" | grep ".desktop"
@@ -76,6 +80,12 @@ function create_list_files() {
         name_show=$(cat "${desktop_files}/${current_file}" | grep "Name=" | head -1 | cut -d "=" -f 2 | sed 's/\//|/g')
         if [ ! -z "${name_show}" ] ; then
           echo "${desktop_files}/${current_file}" > "${load_desktop_files}/${name_show}"
+        fi
+      fi
+      if [ -f "${desktop_files_local}/${current_file}" ] ; then
+        name_show=$(cat "${desktop_files_local}/${current_file}" | grep "Name=" | head -1 | cut -d "=" -f 2 | sed 's/\//|/g')
+        if [ ! -z "${name_show}" ] ; then
+          echo "${desktop_files_local}/${current_file}" > "${load_desktop_files}/${name_show}"
         fi
       fi
       if [ -f "${desktop_files_home}/${current_file}" ] ; then
