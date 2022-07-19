@@ -174,10 +174,10 @@ function load_themes_files() {
     # Gruvbox Dark
     echo "#!/bin/bash" > ${load_themes}/gruvbox-dark
     echo "" >> ${load_themes}/gruvbox-dark
-    echo "NFCOLOR=\"#bbbbbb\"" >> ${load_themes}/gruvbox-dark
-    echo "NBCOLOR=\"#2f3239\"" >> ${load_themes}/gruvbox-dark
-    echo "SFCOLOR=\"#dddddd\"" >> ${load_themes}/gruvbox-dark
-    echo "SBCOLOR=\"#217dd0\"" >> ${load_themes}/gruvbox-dark
+    echo "NFCOLOR=\"#efe4c2\"" >> ${load_themes}/gruvbox-dark
+    echo "NBCOLOR=\"#2e281f\"" >> ${load_themes}/gruvbox-dark
+    echo "SFCOLOR=\"#efe4c2\"" >> ${load_themes}/gruvbox-dark
+    echo "SBCOLOR=\"#655a4b\"" >> ${load_themes}/gruvbox-dark
   fi
 }
 
