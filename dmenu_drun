@@ -97,7 +97,7 @@ function create_list_files() {
       if [ -f "${desktop_files_flatpak}/${current_file}" ] ; then
         name_show=$(cat "${desktop_files_flatpak}/${current_file}" | grep "Name=" | head -1 | cut -d "=" -f 2 | sed 's/\//|/g')
         if [ ! -z "${name_show}" ] ; then 
-          echo "${desktop_files_flatpak}/${current_file}" > "${load_desktop_files}/${name_show}"
+          echo "${desktop_files_flatpak}/${current_file}" > "${load_desktop_files}/${name_show} (Flatpak)"
         fi
       fi
     done
