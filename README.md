@@ -72,6 +72,13 @@ dmenu-scripts - My implementation of dmenu to simulate Rofi functions (run, drun
   ```
 
 <img src="examples/dmenu_cmd.png" /> 
+
+
+  ```shell
+  dmenu_close
+  ```
+
+<img src="examples/dmenu_close.png" /> 
  
 ### External links:
 
